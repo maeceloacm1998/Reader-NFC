@@ -1,5 +1,19 @@
 {
   "expo": {
+    " plugins ": [
+      [
+        " react-native-nfc-manager ",
+        {
+          " nfcPermission ": " Mensagem de permissão personalizada ",
+          " selectIdentifiers ": [
+            " A0000002471001 "
+          ],
+          " systemCodes ": [
+            " 8008 "
+          ]
+        }
+      ]
+    ],
     "name": "NGOnfc",
     "slug": "NGOnfc",
     "version": "1.0.0",
@@ -23,7 +37,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.maecelo_acm.NGOnfc"
     },
     "web": {
       "favicon": "./assets/favicon.png"
