@@ -36,7 +36,9 @@ export default function App() {
       const getStatusSlide = await AsyncStorage.getItem("@NGO:slides");
       const slides = JSON.parse(getStatusSlide);
 
-      setShowSlides(slides);
+      if (slides !== null && slides !== undefined) {
+        setShowSlides(slides);
+      }
     }
 
     renderSlides();
@@ -48,10 +50,6 @@ export default function App() {
     await NFCScanner.isEnabled();
 
     const support = await NFCScanner.Support();
-
-    await new Promise(function (resolve, reject) {
-      setTimeout(resolve, 2000);
-    });
 
     setSupport(support);
   }
@@ -122,7 +120,7 @@ export default function App() {
           />
         </View>
 
-        {showSlides && (
+        {showSlides == true && (
           <ModalSllides
             onDone={() => {
               setShowSlidesInLocalStorage();
